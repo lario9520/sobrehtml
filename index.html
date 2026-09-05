@@ -1,2 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>O que é HTML?</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #eef4ff, #f8fbff);
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #1565c0;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        h2 {
+            color: #1565c0;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        .destaque {
+            background: #e3f2fd;
+            border-left: 6px solid #1565c0;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .exemplo {
+            background: #1e1e1e;
+            color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .exemplo pre {
+            font-family: Consolas, monospace;
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+
+        .explicacao {
+            background: #f5f5f5;
+            padding: 18px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .estrutura {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 25px 0;
+        }
+
+        .parte {
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .doctype {
+            background: #6a1b9a;
+        }
+
+        .html {
+            background: #1565c0;
+        }
+
+        .head {
+            background: #00897b;
+        }
+
+        .body {
+            background: #ef6c00;
+        }
+
+        .exemplo-visual {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .visual-topo {
+            background: #1565c0;
+            color: white;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .visual-menu {
+            background: #eeeeee;
+            padding: 10px;
+        }
+
+        .visual-conteudo {
+            padding: 25px;
+            min-height: 150px;
+        }
+
+        .visual-rodape {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .resumo {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .botoes {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .botao {
+            flex: 1;
+            text-align: center;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .voltar {
+            background: #757575;
+            color: white;
+        }
+
+        .questionario {
+            background: #1565c0;
+            color: white;
+        }
+
+        .botao:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            .botoes {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🌐 O que é HTML?</h1>
+        <p>Entenda de forma simples o que é HTML e para que ele serve.</p>
+    </header>
+
+    <h2>1. O que é HTML?</h2>
+
+    <p>
+        <strong>HTML</strong> significa
+        <strong>HyperText Markup Language</strong>,
+        que em português significa
+        <strong>Linguagem de Marcação de Hipertexto</strong>.
+    </p>
+
+    <p>
+        O HTML é uma das principais tecnologias utilizadas para
+        criar e organizar páginas da internet.
+    </p>
+
+    <div class="destaque">
+        💡 <strong>Em palavras simples:</strong><br>
+        HTML é responsável por organizar o conteúdo de uma página,
+        dizendo ao navegador onde ficam os títulos, textos, imagens,
+        links, listas, botões e outros elementos.
+    </div>
+
+    <h2>2. Para que serve o HTML?</h2>
+
+    <p>
+        O HTML serve principalmente para definir a
+        <strong>estrutura e o conteúdo</strong> de uma página.
+    </p>
+
+    <p>Por exemplo, podemos usar HTML para criar:</p>
+
+    <ul>
+        <li>📌 Títulos</li>
+        <li>📝 Textos e parágrafos</li>
+        <li>🖼️ Imagens</li>
+        <li>🔗 Links</li>
+        <li>📋 Listas</li>
+        <li>🔘 Botões</li>
+        <li>📦 Seções de conteúdo</li>
+        <li>📄 Formulários</li>
+    </ul>
+
+    <h2>3. Um exemplo simples</h2>
+
+    <p>
+        Veja este pequeno exemplo de HTML:
+    </p>
+
+    <div class="exemplo">
+<pre>
+</h1><h1>Olá, mundo!</h1></h1>
+
+<p><p>Esta é minha primeira página HTML.<p></p>
+</pre>
+    </div>
+
+    <div class="explicacao">
+        <strong>O que aconteceu?</strong>
+
+        <p>
+            A tag <strong><h1></strong> cria um título principal.
+        </p>
+
+        <p>
+            A tag <strong><p></strong> cria um parágrafo.
+        </p>
+    </div>
+
+    <h2>4. HTML usa tags</h2>
+
+    <p>
+        O HTML funciona utilizando elementos chamados
+        <strong>tags</strong>.
+    </p>
+
+    <p>
+        Normalmente uma tag possui uma abertura e um fechamento.
+    </p>
+
+    <div class="exemplo">
+<pre>
+<p>Este é um texto.</p>
+</pre>
+    </div>
+
+    <p>
+        Neste exemplo:
+    </p>
+
+    <ul>
+        <li><strong><p></strong> → indica o início do parágrafo.</li>
+        <li><strong>Este é um texto.</strong> → é o conteúdo.</li>
+        <li><strong></p></strong> → indica o final do parágrafo.</li>
+    </ul>
+
+    <h2>5. Estrutura de uma página HTML</h2>
+
+    <p>
+        Uma página HTML possui uma estrutura básica.
+        Veja um exemplo completo:
+    </p>
+
+    <div class="exemplo">
+<pre>
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Minha Página</title>
+    </head>
+
+    <body>
+
+        <h1>Olá, mundo!</h1>
+
+        <p>
+            Esta é minha primeira página HTML.
+        </p>
+
+    </body>
+
+</html>
+</pre>
+    </div>
+
+    <h2>6. Entendendo cada parte</h2>
+
+    <div class="estrutura">
+
+        <div class="parte doctype">
+            <!DOCTYPE html><br>
+            Informa ao navegador que o documento utiliza HTML5.
+        </div>
+
+        <div class="parte html">
+            <html><br>
+            É o elemento principal que envolve toda a página.
+        </div>
+
+        <div class="parte head">
+            <head><br>
+            Contém informações da página, como título, configurações e outros dados.
+        </div>
+
+        <div class="parte body">
+            <body><br>
+            Contém aquilo que será exibido para o usuário na página.
+        </div>
+
+    </div>
+
+    <h2>7. O que aparece na tela?</h2>
+
+    <p>
+        Imagine que o navegador interprete o código HTML anterior.
+        O resultado poderia ser parecido com isto:
+    </p>
+
+    <div class="exemplo-visual">
+
+        <div class="visual-topo">
+            Minha Página
+        </div>
+
+        <div class="visual-menu">
+            Início | Sobre | Contato
+        </div>
+
+        <div class="visual-conteudo">
+
+            <h2>Olá, mundo!</h2>
+
+            <p>
+                Esta é minha primeira página HTML.
+            </p>
+
+        </div>
+
+        <div class="visual-rodape">
+            © Minha Página
+        </div>
+
+    </div>
+
+    <h2>8. HTML, CSS e JavaScript</h2>
+
+    <p>
+        Em uma página moderna, normalmente HTML, CSS e JavaScript
+        trabalham juntos.
+    </p>
+
+    <div class="explicacao">
+
+        <p>
+            🧱 <strong>HTML</strong> → cria e organiza a estrutura.
+        </p>
+
+        <p>
+            🎨 <strong>CSS</strong> → modifica a aparência e o estilo.
+        </p>
+
+        <p>
+            ⚙️ <strong>JavaScript</strong> → adiciona comportamento e interatividade.
+        </p>
+
+    </div>
+
+    <div class="destaque">
+
+        <strong>Exemplo para memorizar:</strong>
+
+        <p>
+            Imagine uma casa:
+        </p>
+
+        <p>
+            🧱 HTML = estrutura da casa
+        </p>
+
+        <p>
+            🎨 CSS = pintura e decoração
+        </p>
+
+        <p>
+            ⚙️ JavaScript = sistemas que fazem as coisas funcionarem
+        </p>
+
+    </div>
+
+    <div class="resumo">
+
+        <h2>📚 Resumo da aula</h2>
+
+        <p>
+            HTML é uma linguagem de marcação utilizada para
+            estruturar o conteúdo de páginas da internet.
+        </p>
+
+        <p>
+            Ele utiliza tags para identificar títulos, parágrafos,
+            imagens, links, listas, formulários e diversos outros elementos.
+        </p>
+
+        <p>
+            A estrutura básica de uma página HTML possui elementos como
+            <strong><!DOCTYPE html></strong>,
+            <strong><html></strong>,
+            <strong><head></strong> e
+            <strong><body></strong>.
+        </p>
+
+        <p>
+            <strong>Agora que você entendeu o conteúdo,
+            teste seus conhecimentos no questionário!</strong>
+        </p>
+
+    </div>
+
+    <!-- BOTÕES -->
+
+    <div class="botoes">
+
+        <!--
+            BOTÃO VOLTAR
+
+            TROQUE "#" pelo endereço da página anterior.
+
+            Exemplo:
+            href="index.html"
+        -->
+
+        <a href="#" class="botao voltar">
+            ← Voltar
+        </a>
+
+
+        <!--
+            BOTÃO QUESTIONÁRIO
+
+            TROQUE "#" pelo endereço do seu questionário.
+
+            Exemplo:
+            href="questionario.html"
+
+            Ou coloque um link de um site:
+            href="https://seusite.com/questionario"
+        -->
+
+        <a href="Segundo.html" class="botao questionario">
+            📝 proximo
+        </a>
+
+    </div>
+
+    <footer>
+        Aula de HTML • Estrutura de uma página
+    </footer>
+
+</div>
+
+</body>
+</html>
        
