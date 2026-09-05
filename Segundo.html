@@ -1,1 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estrutura Básica de um Documento HTML</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #e8f1ff, #f8fbff);
+            color: #222;
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: #1565c0;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #666;
+            font-size: 18px;
+        }
+
+        h2 {
+            color: #1565c0;
+            margin-top: 30px;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin: 15px 0 20px 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* CAIXA DE DESTAQUE */
+
+        .destaque {
+            background: #e3f2fd;
+            border-left: 6px solid #1565c0;
+            padding: 18px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        /* CAIXA DE EXEMPLO */
+
+        .codigo {
+            background: #1e1e1e;
+            color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .codigo pre {
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+
+        /* EXPLICAÇÃO */
+
+        .explicacao {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+
+        /* CARDS DAS TAGS */
+
+        .card {
+            border-radius: 12px;
+            padding: 22px;
+            margin: 20px 0;
+            border-left: 6px solid;
+        }
+
+        .doctype {
+            background: #f3e5f5;
+            border-color: #8e24aa;
+        }
+
+        .html {
+            background: #e3f2fd;
+            border-color: #1565c0;
+        }
+
+        .head {
+            background: #e0f2f1;
+            border-color: #00897b;
+        }
+
+        .body {
+            background: #fff3e0;
+            border-color: #ef6c00;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        /* ESTRUTURA VISUAL */
+
+        .estrutura {
+            margin: 25px 0;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .estrutura-item {
+            padding: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid white;
+        }
+
+        .estrutura-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-doctype {
+            background: #8e24aa;
+            color: white;
+        }
+
+        .item-html {
+            background: #1565c0;
+            color: white;
+        }
+
+        .item-head {
+            background: #00897b;
+            color: white;
+        }
+
+        .item-body {
+            background: #ef6c00;
+            color: white;
+        }
+
+        /* EXEMPLO DO NAVEGADOR */
+
+        .navegador {
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .barra {
+            background: #ddd;
+            padding: 10px;
+            color: #555;
+        }
+
+        .pagina {
+            padding: 25px;
+            min-height: 180px;
+        }
+
+        .pagina h2 {
+            margin-top: 0;
+        }
+
+        /* RESUMO */
+
+        .resumo {
+            background: #e8f5e9;
+            border-left: 6px solid #2e7d32;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* BOTÕES */
+
+        .botoes {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .botao {
+            flex: 1;
+            padding: 16px 20px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 17px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .voltar {
+            background: #757575;
+        }
+
+        .questionario {
+            background: #1565c0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            .botoes {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- CABEÇALHO -->
+
+    <header>
+
+        <h1>📄 Estrutura Básica de um Documento HTML</h1>
+
+        <p>
+            Entenda o significado de
+            <!DOCTYPE html>, <html>, <head> e <body>
+        </p>
+
+    </header>
+
+
+    <!-- INTRODUÇÃO -->
+
+    <h2>1. O que é a estrutura HTML?</h2>
+
+    <p>
+        Todo documento HTML possui uma estrutura básica.
+        Essa estrutura ajuda o navegador a entender como o conteúdo
+        da página deve ser interpretado e organizado.
+    </p>
+
+    <div class="destaque">
+
+        💡 <strong>Imagine uma página HTML como uma casa.</strong>
+
+        <p>
+            A estrutura HTML funciona como a planta da casa:
+            cada parte possui uma função específica.
+        </p>
+
+    </div>
+
+
+    <!-- CÓDIGO COMPLETO -->
+
+    <h2>2. Estrutura básica completa</h2>
+
+    <p>
+        Antes de estudar cada parte separadamente,
+        observe um documento HTML completo:
+    </p>
+
+
+    <div class="codigo">
+
+<pre>
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <title>Minha Página</title>
+
+    </head>
+
+
+    <body>
+
+        <h1>Olá, mundo!</h1>
+
+        <p>Esta é minha página HTML.</p>
+
+    </body>
+
+</html>
+</pre>
+
+    </div>
+
+
+    <p>
+        Agora vamos entender cada parte desse código.
+    </p>
+
+
+    <!-- DOCTYPE -->
+
+    <div class="card doctype">
+
+        <h3>1️⃣ <!DOCTYPE html></h3>
+
+        <p>
+            Essa declaração informa ao navegador que o documento
+            está utilizando o padrão HTML5.
+        </p>
+
+        <p>
+            Ela normalmente aparece como a primeira linha do documento.
+        </p>
+
+    </div>
+
+
+    <div class="codigo">
+
+<pre>
+<!DOCTYPE html>
+</pre>
+
+    </div>
+
+
+    <div class="explicacao">
+
+        <strong>Importante:</strong>
+
+        <p>
+            <!DOCTYPE html> não é exatamente uma tag HTML.
+            É uma declaração que informa ao navegador qual padrão
+            de HTML deve ser utilizado.
+        </p>
+
+    </div>
+
+
+    <!-- HTML -->
+
+    <div class="card html">
+
+        <h3>2️⃣ <html></h3>
+
+        <p>
+            A tag <html> é o elemento que envolve
+            praticamente todo o documento HTML.
+        </p>
+
+        <p>
+            Ela indica onde começa e termina o documento.
+        </p>
+
+    </div>
+
+
+    <div class="codigo">
+
+<pre>
+<html lang="pt-BR">
+
+    ...
+
+</html>
+</pre>
+
+    </div>
+
+
+    <div class="explicacao">
+
+        <strong>O que significa lang="pt-BR"?</strong>
+
+        <p>
+            O atributo <strong>lang="pt-BR"</strong> informa que
+            o idioma principal da página é português do Brasil.
+        </p>
+
+    </div>
+
+
+    <!-- HEAD -->
+
+    <div class="card head">
+
+        <h3>3️⃣ <head></h3>
+
+        <p>
+            A tag <head> contém informações sobre a página
+            que normalmente não aparecem diretamente no conteúdo
+            principal da tela.
+        </p>
+
+        <p>
+            Dentro do <head> podemos colocar informações como:
+        </p>
+
+        <ul>
+
+            <li>Título da página</li>
+
+            <li>Configuração de caracteres</li>
+
+            <li>Configuração para dispositivos móveis</li>
+
+            <li>Arquivos CSS</li>
+
+            <li>Outras informações importantes</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="codigo">
+
+<pre>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Minha Página</title>
+
+</head>
+</pre>
+
+    </div>
+
+
+    <div class="explicacao">
+
+        <strong>Exemplo:</strong>
+
+        <p>
+            A tag <title> define o título que aparece
+            na aba do navegador.
+        </p>
+
+    </div>
+
+
+    <!-- BODY -->
+
+    <div class="card body">
+
+        <h3>4️⃣ <body></h3>
+
+        <p>
+            A tag <body> contém o conteúdo que será
+            apresentado ao usuário na página.
+        </p>
+
+        <p>
+            É dentro do <body> que normalmente colocamos:
+        </p>
+
+        <ul>
+
+            <li>Títulos</li>
+
+            <li>Parágrafos</li>
+
+            <li>Imagens</li>
+
+            <li>Links</li>
+
+            <li>Botões</li>
+
+            <li>Vídeos</li>
+
+            <li>Formulários</li>
+
+            <li>Listas</li>
+
+        </ul>
+
+    </div>
+
+
+    <div class="codigo">
+
+<pre>
+<body>
+
+    <h1>Minha primeira página</h1>
+
+    <p>Estou aprendendo HTML!</p>
+
+</body>
+</pre>
+
+    </div>
+
+
+    <!-- ESTRUTURA VISUAL -->
+
+    <h2>3. Visualizando a estrutura</h2>
+
+    <p>
+        Podemos imaginar o documento HTML dividido desta maneira:
+    </p>
+
+
+    <div class="estrutura">
+
+        <div class="estrutura-item item-doctype">
+
+            <!DOCTYPE html>
+
+            <br>
+
+            <small>
+                Informa que estamos utilizando HTML5.
+            </small>
+
+        </div>
+
+
+        <div class="estrutura-item item-html">
+
+            <html>
+
+            <br>
+
+            <small>
+                Envolve todo o documento.
+            </small>
+
+        </div>
+
+
+        <div class="estrutura-item item-head">
+
+            <head>
+
+            <br>
+
+            <small>
+                Contém informações da página.
+            </small>
+
+        </div>
+
+
+        <div class="estrutura-item item-body">
+
+            <body>
+
+            <br>
+
+            <small>
+                Contém o conteúdo exibido na página.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- EXEMPLO PRÁTICO -->
+
+    <h2>4. Exemplo prático</h2>
+
+    <p>
+        Vamos criar uma página simples utilizando
+        todas essas partes:
+    </p>
+
+
+    <div class="codigo">
+
+<pre>
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Minha Aula de HTML</title>
+
+</head>
+
+<body>
+
+    <h1>Bem-vindo!</h1>
+
+    <p>
+        Estou aprendendo a estrutura básica do HTML.
+    </p>
+
+    <button>
+        Clique aqui
+    </button>
+
+</body>
+
+</html>
+</pre>
+
+    </div>
+
+
+    <!-- RESULTADO -->
+
+    <h2>5. Como o navegador pode mostrar isso?</h2>
+
+    <p>
+        O navegador interpreta o código e apresenta
+        o conteúdo visualmente para o usuário.
+    </p>
+
+
+    <div class="navegador">
+
+        <div class="barra">
+
+            🌐 Minha Aula de HTML
+
+        </div>
+
+
+        <div class="pagina">
+
+            <h2>Bem-vindo!</h2>
+
+            <p>
+                Estou aprendendo a estrutura básica do HTML.
+            </p>
+
+            <button>
+                Clique aqui
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ANALOGIA -->
+
+    <h2>6. Uma maneira fácil de memorizar</h2>
+
+    <div class="destaque">
+
+        🏠 <strong>Imagine uma casa:</strong>
+
+        <p>
+            📋 <strong><!DOCTYPE html></strong>
+            → informa o padrão utilizado.
+        </p>
+
+        <p>
+            🏠 <strong><html></strong>
+            → representa a casa inteira.
+        </p>
+
+        <p>
+            🗂️ <strong><head></strong>
+            → contém informações e configurações da casa.
+        </p>
+
+        <p>
+            🛋️ <strong><body></strong>
+            → é onde fica o conteúdo que as pessoas utilizam.
+        </p>
+
+    </div>
+
+
+    <!-- RESUMO -->
+
+    <div class="resumo">
+
+        <h2>📚 Resumo</h2>
+
+        <p>
+            <strong><!DOCTYPE html></strong>
+            → informa que o documento utiliza HTML5.
+        </p>
+
+        <p>
+            <strong><html></strong>
+            → elemento que envolve todo o documento.
+        </p>
+
+        <p>
+            <strong><head></strong>
+            → contém informações e configurações da página.
+        </p>
+
+        <p>
+            <strong><body></strong>
+            → contém o conteúdo que aparece para o usuário.
+        </p>
+
+        <p>
+            <strong>Estrutura básica:</strong>
+        </p>
+
+<pre>
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        ...
+
+    </head>
+
+    <body>
+
+        ...
+
+    </body>
+
+</html>
+</pre>
+
+    </div>
+
+
+    <!-- BOTÕES -->
+
+    <div class="botoes">
+
+        <!--
+            BOTÃO VOLTAR
+
+            TROQUE "#" PELO LINK DA PÁGINA ANTERIOR.
+
+            Exemplo:
+
+            href="aula1.html"
+        -->
+
+        <a
+            href="#"
+            class="botao voltar">
+
+            ← Voltar
+
+        </a>
+
+
+        <!--
+            BOTÃO QUESTIONÁRIO
+
+            TROQUE "#" PELO LINK DO SEU QUESTIONÁRIO.
+
+            Exemplo:
+
+            href="questionario2.html"
+
+            Ou:
+
+            href="https://seusite.com/questionario"
+        -->
+
+        <a
+            href="index.html"
+            class="botao questionario">
+
+            📝 o que html?
+
+        </a>
+
+    </div>
+
+
+    <footer>
+
+        Aula 2 • Estrutura Básica de um Documento HTML
+
+    </footer>
+
+
+</div>
+
+</body>
+
+</html>
